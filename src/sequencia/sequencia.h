@@ -45,6 +45,8 @@ class Sequencia {
         }
         return dados[indice];
     }
+    // Operator serve para realizar uma sobrecarga de operadores(+, *, -, /...), auxiliando
+    // em definir novas "propriedades para esses operadores"
 
 
     T& obterElemento(int indice) {
