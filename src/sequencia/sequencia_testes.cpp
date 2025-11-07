@@ -16,14 +16,14 @@ TEST_CASE("Testa a adição de elementos em uma sequência vazia") {
     CHECK(seq.obterElemento(0) == 42);
 }
 
-/*TEST_CASE("Testa a remoção de elementos de uma sequência") {
+TEST_CASE("Testa a remoção de elementos de uma sequência") {
     Sequencia<int> seq;
     seq.adicionar(42);
     seq.adicionar(13);
     seq.removerUltimo();
 
     CHECK(seq.obterTamanho() == 1);
-    CHECK(seq[0] == 42);
+    CHECK(seq.obterElemento(0) == 42);
 }
 
 TEST_CASE("Testa o redimensionamento da sequência") {
@@ -33,7 +33,7 @@ TEST_CASE("Testa o redimensionamento da sequência") {
     }
 
     CHECK(seq.obterTamanho() == 100);
-    CHECK(seq[99] == 99);
+    CHECK(seq.obterElemento(99) == 99);
 }
 
 TEST_CASE("Testa a alteração de elementos via operador[]") {
@@ -48,11 +48,11 @@ TEST_CASE("Testa a alteração de elementos via operador[]") {
 }
 
 TEST_CASE("Testa a criação de uma sequência de strings") {
-    Sequencia<std::string> seq;
+    Sequencia<string> seq;
     seq.adicionar("hello");
     seq.adicionar("world");
 
     CHECK(seq.obterTamanho() == 2);
     CHECK(seq[0] == "hello");
     CHECK(seq[1] == "world");
-}*/
+}

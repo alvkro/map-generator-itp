@@ -39,14 +39,23 @@ class Sequencia {
         tamanho++;
     }
 
-    T obterElemento(int indice) {
-        if (indice < 0 || indice <= tamanho) {
+    T& operator[] (int indice) { // SERVE PARA LER O OPERADOR [] (ESTUDAR MAIS ESSE TAL DE OPERATOR)
+        if (indice < 0 || indice >= tamanho) {
             cerr << "Erro: Índice inválido!\n";
         }
         return dados[indice];
     }
 
-    T removerUltimo() {
+
+    T& obterElemento(int indice) {
+        if (indice < 0 || indice >= tamanho) {
+            cerr << "Erro: Índice inválido!\n";
+        }
+        return dados[indice]; 
+    }
+
+
+    void removerUltimo() {
         if (tamanho <= 0) {
             cerr << "Erro: sequência vazia!\n";
         }
