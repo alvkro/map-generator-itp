@@ -10,7 +10,6 @@ class Paleta {
     int tamanho, capacidade;
     
     public:
-
     Paleta() {
         capacidade = 255;
         tamanho = 0;
@@ -20,4 +19,6 @@ class Paleta {
     ~Paleta() {
         delete[] ConjuntoDeCores;
     }
+
+    int obterTamanho();
 };
