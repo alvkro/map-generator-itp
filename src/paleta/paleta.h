@@ -1,3 +1,4 @@
+#pragma once
 using namespace std;
 
 struct Cores {
@@ -21,4 +22,5 @@ class Paleta {
     }
 
     int obterTamanho();
+    void adicionarCor(Cores& NomeTemp);     
 };
