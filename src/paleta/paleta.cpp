@@ -1,11 +1,20 @@
 #include "paleta.h"
+#include <iostream>
+using namespace std;
 
-int Paleta::obterTamanho() {
-    return tamanho;
+// TODO: Fazer um tratamento nas funções
+
+int Paleta::obterTamanho() {return tamanho;}
+
+void Paleta::adicionarCor(const Cores& RGB) {
+    if (tamanho < capacidade) {
+        ConjuntoDeCores[tamanho] = RGB;
+        tamanho++;
+    }
+    else if (tamanho > capacidade) {
+        cerr << "indice inválido\n";
+    }
 }
 
-void adicionarCor(Cores& NomeTemp) { // Usar Cores Pallet?
-    NomeTemp.r += ;
-    NomeTemp.g += ;
-    NomeTemp.b += ;
-}
+Cores Paleta::obterCor(int indice) {return ConjuntoDeCores[indice];} // Não é int porque o ConjuntoDeCores é type::Cores
+
