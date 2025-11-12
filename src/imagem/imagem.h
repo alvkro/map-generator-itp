@@ -10,13 +10,16 @@ class Imagem {
         altura = h;
 
         // Entender melhor  vvvvv
-        pixels = new int*[w];
+        pixels = new int*[w]; // guarda os endereços do vetor
         for (int i = 0; i < w; i++) {
-            pixels[i] = new int[h];
+            pixels[i] = new int[h]; // O ponteiro precisa apenas na declaração
         }
     }
 
-    ~Imagem() {
+    ~Imagem() { // Fazer um destrutor com uma maior qualidade
+        for (int i = 0; i < largura; i++) {
+            delete[] pixels[i];
+        }
         delete[] pixels;
     }
 
