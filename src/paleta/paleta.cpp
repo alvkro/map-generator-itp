@@ -1,5 +1,7 @@
 #include "paleta.h"
 #include <iostream>
+#include <fstream>
+#include <iomanip>
 using namespace std;
 
 // TODO: Fazer um tratamento nas funções
@@ -12,9 +14,20 @@ void Paleta::adicionarCor(const Cores& RGB) {
         tamanho++;
     }
     else if (tamanho > capacidade) {
-        cerr << "indice inválido\n";
+        cerr << "Indice inválido\n";
     }
 }
 
 Cores Paleta::obterCor(int indice) {return ConjuntoDeCores[indice];} // Não é int porque o ConjuntoDeCores é type::Cores
 
+void HexToDec(const string& hexadecimal) {
+    ifstream arquivo("cores.hex"); // Lê o arquivo
+
+    string CodigoHex;
+    while (getline(arquivo, CodigoHex)) {
+        if (CodigoHex[0] == '#') {
+            CodigoHex.erase(CodigoHex.begin());
+        }
+        /*Como transformar um arquivo de Hexadecimal para apenas decimal?*/
+    }
+}
