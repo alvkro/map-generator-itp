@@ -1,3 +1,5 @@
+#include <string>
+using namespace std;
 #pragma once
 
 struct Cores {
@@ -8,11 +10,21 @@ class Paleta {
     public:
     Cores* ConjuntoDeCores;
     int tamanho, capacidade;
+    string arquivo;
 
     Paleta() {
+        arquivo = "cores.hex";
         capacidade = 255;
         tamanho = 0; // tamanho inicial
         ConjuntoDeCores = new Cores[capacidade];
+    }
+
+    Paleta(const string& nomeDoArquivo) {
+        arquivo = "cores.hex";
+        capacidade = 255;
+        tamanho = 0; // tamanho inicial
+        ConjuntoDeCores = new Cores[capacidade];
+        HexToDec(nomeDoArquivo);
     }
 
     ~Paleta() {
@@ -20,7 +32,7 @@ class Paleta {
     }
 
     int obterTamanho();
-    void adicionarCor(const Cores& RGB); // Por que da erro se colocar Cores& RGB?
+    void adicionarCor(Cores RGB); // Por que da erro se colocar Cores& RGB?
     Cores obterCor(int indice);
-    void HexToDec(const string& hexadecimal);
+    void HexToDec(string hexadecimal);
 };
