@@ -56,7 +56,6 @@ class Sequencia {
         return dados[indice]; 
     }
 
-
     void removerUltimo() {
         if (tamanho <= 0) {
             cerr << "Erro: sequência vazia!\n";
