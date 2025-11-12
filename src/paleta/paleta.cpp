@@ -28,6 +28,15 @@ void HexToDec(const string& hexadecimal) {
         if (CodigoHex[0] == '#') {
             CodigoHex.erase(CodigoHex.begin());
         }
-        /*Como transformar um arquivo de Hexadecimal para apenas decimal?*/
+
+        unsigned int valor;
+        stringstream ss; // Texto -> número
+        ss << hex << CodigoHex;
+        ss >> valor;
+
+        int r = (valor >> 16) & 0xFF;
+        int g = (valor >> 8) & 0xFF;
+        int b = valor & 0xFF;
+
     }
 }
