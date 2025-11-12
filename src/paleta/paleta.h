@@ -1,19 +1,17 @@
 #pragma once
-using namespace std;
 
 struct Cores {
     int r, g, b;
 };
 
-class Paleta {
-    private:
+class Paleta {  
+    public:
     Cores* ConjuntoDeCores;
     int tamanho, capacidade;
-    
-    public:
+
     Paleta() {
         capacidade = 255;
-        tamanho = 0;
+        tamanho = 0; // tamanho inicial
         ConjuntoDeCores = new Cores[capacidade];
     }
 
@@ -22,5 +20,7 @@ class Paleta {
     }
 
     int obterTamanho();
-    void adicionarCor(Cores& NomeTemp);     
+    void adicionarCor(const Cores& RGB); // Por que da erro se colocar Cores& RGB?
+    Cores obterCor(int indice);
+    void HexToDec(const string& hexadecimal);
 };
