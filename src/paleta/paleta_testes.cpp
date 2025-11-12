@@ -18,18 +18,18 @@ TEST_CASE("Testa a adição de cores uma paleta vazia") {
     CHECK(paleta.obterCor(0).b == 0);
 }
 
-/*
 TEST_CASE("Testa a obtenção de uma cor com índice inválido") {
     Paleta paleta;
-    paleta.adicionarCor(Cor {100, 150, 200});
+    paleta.adicionarCor(Cores {100, 150, 200});
 
-    Cor corInvalida = paleta.obterCor(5); // índice inválido (maior que o tamanho)
+    Cores corInvalida = paleta.obterCor(5); // índice inválido (maior que o tamanho)
 
     // deve retornar uma cor padrão (preto)
     CHECK(corInvalida.r == 0);
     CHECK(corInvalida.g == 0);
     CHECK(corInvalida.b == 0);
 }
+
 
 TEST_CASE("Testa a criação de uma paleta a partir de um arquivo válido") {
     // o arquivo "cores.hex" foi fornecido junto com o projeto.
@@ -58,4 +58,4 @@ TEST_CASE("Testa a criação de uma paleta a partir de um arquivo inexistente") 
 
     // a paleta deve estar vazia
     CHECK(paleta.obterTamanho() == 0);
-} */
+}
