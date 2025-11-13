@@ -9,15 +9,15 @@ class Imagem {
         largura = w;
         altura = h;
 
-        // Entender melhor  vvvvv
-        pixels = new int*[w]; // guarda os endereços do vetor
-        for (int i = 0; i < w; i++) {
-            pixels[i] = new int[h]; // O ponteiro precisa apenas na declaração
+        pixels = new int*[h]; 
+        for (int i = 0; i < h; i++) {
+            pixels[i] = new int[w];
         }
+        // Orientação: pixels[y][x]
     }
 
-    ~Imagem() { // Fazer um destrutor com uma maior qualidade
-        for (int i = 0; i < largura; i++) {
+    ~Imagem() { 
+        for (int i = 0; i < altura; i++) {
             delete[] pixels[i];
         }
         delete[] pixels;
