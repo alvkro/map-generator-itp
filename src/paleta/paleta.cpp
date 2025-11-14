@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-// TODO: Fazer um tratamento nas funções
+// TODO: Fazer um tratamento nas funções :)
 
 int Paleta::obterTamanho() {return tamanho;}
 

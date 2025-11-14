@@ -13,14 +13,12 @@ class Paleta {
     string arquivo;
 
     Paleta() {
-        arquivo = "cores.hex";
         capacidade = 255;
         tamanho = 0; // tamanho inicial
         ConjuntoDeCores = new Cores[capacidade];
     }
 
     Paleta(const string& nomeDoArquivo) {
-        arquivo = "cores.hex";
         capacidade = 255;
         tamanho = 0; // tamanho inicial
         ConjuntoDeCores = new Cores[capacidade];
