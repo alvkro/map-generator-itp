@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-// TODO: Fazer um tratamento nas funções :) 2
+// TODO: Fazer um tratamento nas funções, ler o arquivo PPM
 
 int Paleta::obterTamanho() {return tamanho;}
 

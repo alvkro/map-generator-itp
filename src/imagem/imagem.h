@@ -1,5 +1,10 @@
 #include "../paleta/paleta.h"
 
+class Pixel {
+    Cores RGB;
+    
+};
+
 class Imagem {
     public:
     int largura, altura;
@@ -9,11 +14,11 @@ class Imagem {
         largura = w;
         altura = h;
 
+
         Pixel = new int*[h]; 
         for (int i = 0; i < h; i++) {
             Pixel[i] = new int[w];
         }
-        // Orientação: pixels[y][x]
     }
 
     ~Imagem() { 
