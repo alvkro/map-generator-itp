@@ -1,8 +1,8 @@
 #include "../paleta/paleta.h"
+// Depois estudar a parte de using...
 
-class Pixel {
-    Cores RGB;
-    
+struct Pixel {
+    int r, g, b;
 };
 
 class Imagem {
