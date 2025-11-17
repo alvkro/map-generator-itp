@@ -20,9 +20,10 @@ class Paleta {
 
     Paleta(const string& nomeDoArquivo) {
         capacidade = 255;
-        tamanho = 0; // tamanho inicial
+        tamanho = 0; // tamanho inicial+
+
         ConjuntoDeCores = new Cores[capacidade];
-        HexToDec(nomeDoArquivo);
+        SetColorHex(nomeDoArquivo);
     }
 
     ~Paleta() {
@@ -32,5 +33,5 @@ class Paleta {
     int obterTamanho();
     void adicionarCor(Cores RGB); // Por que da erro se colocar Cores& RGB?
     Cores obterCor(int indice);
-    void HexToDec(string hexadecimal);
+    void SetColorHex(string hexadecimal);
 };
