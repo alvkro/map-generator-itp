@@ -5,8 +5,6 @@
 #include <string>
 using namespace std;
 
-// TODO: Fazer um tratamento nas funções, ler o arquivo PPM
-
 int Paleta::obterTamanho() {return tamanho;}
 
 void Paleta::adicionarCor(Cores RGB) {
@@ -14,7 +12,7 @@ void Paleta::adicionarCor(Cores RGB) {
         ConjuntoDeCores[tamanho] = RGB;
         tamanho++;
     }
-    else if (tamanho > capacidade) {
+    else if (tamanho > capacidade) { // Alterar isso (colocar para alocar mais memória)
         cerr << "Indice inválido\n";
     }
 }
@@ -22,7 +20,7 @@ void Paleta::adicionarCor(Cores RGB) {
 Cores Paleta::obterCor(int indice) {return ConjuntoDeCores[indice];} 
 // Não é int porque o ConjuntoDeCores é type::Cores
 
-void Paleta::HexToDec(string hexadecimal) {
+void Paleta::HexToDec(string hexadecimal) { // Estudar mais isso daí.
     ifstream arquivo(hexadecimal); // Lê o arquivo
 
     string CodigoHex;
@@ -41,5 +39,7 @@ void Paleta::HexToDec(string hexadecimal) {
         int b = valor & 0xFF;
 
         adicionarCor({r, g, b});
+
+        // Operação bitwise, stream, canal de comunicação
     }
 }
