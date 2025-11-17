@@ -6,28 +6,36 @@ struct Pixel {
 };
 
 class Imagem {
-    public:
+    private:
     int largura, altura;
-    int** Pixel;
+    Pixel** dadosPixel;
 
+    public:
     Imagem(int w, int h) {
         largura = w;
         altura = h;
 
 
-        Pixel = new int*[h]; 
-        for (int i = 0; i < h; i++) {
-            Pixel[i] = new int[w];
+        dadosPixel = new Pixel*[w]; 
+        for (int i = 0; i < w; i++) {
+            dadosPixel[i] = new Pixel;
         }
+    }
+
+    Imagem(string arquivo) {
+        lerPPM(arquivo);
     }
 
     ~Imagem() { 
-        for (int i = 0; i < altura; i++) {
-            delete[] Pixel[i];
+        for (int i = 0; i < largura; i++) {
+            delete[] dadosPixel[i];
         }
-        delete[] Pixel;
+        delete[] dadosPixel;
     }
+
+    Pixel& operator()(int x, int y); // Sobrecarga de operador!
 
     int obterAltura();
     int obterLargura();
+    void lerPPM(string arquivo);
 };
