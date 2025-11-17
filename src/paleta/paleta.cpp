@@ -20,7 +20,7 @@ void Paleta::adicionarCor(Cores RGB) {
 Cores Paleta::obterCor(int indice) {return ConjuntoDeCores[indice];} 
 // Não é int porque o ConjuntoDeCores é type::Cores
 
-void Paleta::HexToDec(string hexadecimal) { // Estudar mais isso daí.
+void Paleta::SetColorHex(string hexadecimal) { // Estudar mais isso daí.
     ifstream arquivo(hexadecimal); // Lê o arquivo
 
     string CodigoHex;

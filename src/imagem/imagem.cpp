@@ -5,7 +5,7 @@ using namespace std;
 
 int Imagem::obterAltura() {return altura;}
 
-int Imagem::obterLargura() {return largura;};
+int Imagem::obterLargura() {return largura;}
 
 bool Imagem::lerPPM(string arquivo) {
         ifstream arquivo;

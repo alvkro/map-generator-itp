@@ -15,7 +15,6 @@ class Imagem {
         largura = w;
         altura = h;
 
-
         dadosPixel = new Pixel*[w]; 
         for (int i = 0; i < w; i++) {
             dadosPixel[i] = new Pixel;
