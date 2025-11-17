@@ -13,9 +13,9 @@ class Paleta {
     string arquivo;
 
     Paleta() {
-        capacidade = 255;
+        capacidade = 10;
         tamanho = 0; // tamanho inicial
-        ConjuntoDeCores = new Cores[capacidade];
+        ConjuntoDeCores = new Cores[capacidade]; // Isso aqui é referente a QUANTAS cores diferentes a paleta vai ter!!!
     }
 
     Paleta(const string& nomeDoArquivo) {
@@ -31,7 +31,10 @@ class Paleta {
     }
 
     int obterTamanho();
+    void ajustarCapacidade();
     void adicionarCor(Cores RGB); // Por que da erro se colocar Cores& RGB?
     Cores obterCor(int indice);
     void SetColorHex(string hexadecimal);
+    int ConvertToHex(string CodigoHex);
+    void OpBitwise(int valor);
 };
