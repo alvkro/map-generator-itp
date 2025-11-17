@@ -30,7 +30,7 @@ void Paleta::HexToDec(string hexadecimal) { // Estudar mais isso daí.
         }
 
         unsigned int valor;
-        stringstream ss; // Texto -> número
+        stringstream ss; // Texto -> número 
         ss << hex << CodigoHex;
         ss >> valor;
 

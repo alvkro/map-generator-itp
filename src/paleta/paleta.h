@@ -3,7 +3,7 @@ using namespace std;
 #pragma once
 
 struct Cores {
-    int r, g, b; // unsigned char
+    int r, g, b; //menos eficiente
 };
 
 class Paleta {  
