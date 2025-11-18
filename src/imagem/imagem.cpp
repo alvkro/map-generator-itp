@@ -35,7 +35,5 @@ bool Imagem::lerPPM(string arquivo) {
     }
 
 Pixel& Imagem::operator()(int x, int y) {
-    return dadosPixel[x][y];
+    return dadosPixel[y][x];
 }
-
-//consertei
