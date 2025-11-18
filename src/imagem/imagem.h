@@ -15,9 +15,9 @@ class Imagem {
         largura = w;
         altura = h;
 
-        dadosPixel = new Pixel*[w]; 
-        for (int i = 0; i < w; i++) {
-            dadosPixel[i] = new Pixel;
+        dadosPixel = new Pixel*[h]; 
+        for (int i = 0; i < h; i++) {
+            dadosPixel[i] = new Pixel[w];
         }
     }
 
@@ -26,7 +26,7 @@ class Imagem {
     }
 
     ~Imagem() { 
-        for (int i = 0; i < largura; i++) {
+        for (int i = 0; i < altura; i++) {
             delete[] dadosPixel[i];
         }
         delete[] dadosPixel;
