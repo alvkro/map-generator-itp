@@ -10,6 +10,11 @@ int Imagem::obterLargura() {return largura;}
 void Imagem::criarImagem(int w, int h) { // ???
     largura = w;
     altura = h;
+
+    dadosPixel = new Pixel*[h];
+    for (int i = 0; i < h; i++){
+        dadosPixel[i] = new Pixel[w]; 
+    } 
 }
 
 bool Imagem::lerPPM(string arquivo) {
