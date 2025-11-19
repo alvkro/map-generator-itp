@@ -48,4 +48,5 @@ class Imagem {
     int obterLargura();
     bool lerPPM(string arquivo);
     void criarImagem(int w, int h);
+    bool salvarPPM(const string& arquivo);
 };
