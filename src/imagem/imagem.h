@@ -11,6 +11,16 @@ class Imagem {
     Pixel** dadosPixel;
 
     public:
+    Imagem() {
+        largura = 10;
+        altura = 10;
+
+        dadosPixel = new Pixel*[altura]; 
+        for (int i = 0; i < altura; i++) {
+            dadosPixel[i] = new Pixel[largura];
+        }
+    }
+
     Imagem(int w, int h) {
         largura = w;
         altura = h;
