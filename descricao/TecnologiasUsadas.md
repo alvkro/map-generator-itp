@@ -17,8 +17,14 @@ Resumo:
 4) Armazena em valor.
 
 # Operação de Bitwise:
-- Operações bitwise são operações realizadas diretamente nos bits de um número.
-- No projeto, elas permitem separar um inteiro no formato hexadecimal 0xRRGGBB nos três canais de cor.
-- Utiliza-se o operador de deslocamento (>>) para posicionar os bits desejados na faixa mais baixa, seguido pelo uso da máscara - 0xFF com o operador AND (&) para extrair apenas os 8 bits correspondentes a cada canal (R, G e B).
-/Completar com bitshift, operadores bitwise e máscara (0xFF).
+- Operações bitwise são operações realizadas diretamente nos bits de um número. No projeto, elas permitem separar um inteiro no formato hexadecimal 0xRRGGBB nos três canais de cor. Utiliza-se o operador de deslocamento (>>) para posicionar os bits desejados na faixa mais baixa, seguido pelo uso da máscara - 0xFF com o operador AND (&) para extrair apenas os 8 bits correspondentes a cada canal (R, G e B).
 
+## Operadores Bitwise
+* AND bit-a-bit `&`: Compara cada bit dos dois números, só dá 1 quando ambos os bits forem 1.
+* Shift para a direita `>>`: Move os bits para a direita, dividindo por 2 a cada movimento.
+
+## Máscara (0xFF):
+* A máscara `0xFF` é usada para extrair os oito últimos bits de um certo valor, neste caso, corresponde ao valor de R, G e B.
+
+## O que o código faz?
+Em resumo, o código é a combinação de todos os elementos acima, primeiro ele "joga" o valor de RGB desejado para o final, daí é aplicado a máscara para extrair os bits que estão no final, que é armazenado em uma variável (neste caso, a variável R (red)). O processo se repete até o final ao chegar em B.
