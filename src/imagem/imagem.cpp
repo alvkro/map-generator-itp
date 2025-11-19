@@ -48,6 +48,14 @@ bool Imagem::lerPPM(string arquivo) {
     return true;
 }
 
+bool Imagem::salvarPPM(string arquivo) {
+    ifstream arq(arquivo);
+    
+    if (!arq.is_open()) {
+        return false;
+    }
+}
+
 Pixel& Imagem::operator()(int x, int y) {
     return dadosPixel[y][x];
 }
