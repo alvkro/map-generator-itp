@@ -51,3 +51,23 @@ bool Imagem::lerPPM(string arquivo) {
 Pixel& Imagem::operator()(int x, int y) {
     return dadosPixel[y][x];
 }
+
+bool Imagem::salvarPPM(const string& arquivo) {
+    ofstream arq(arquivo);
+    if (!arq.is_open()) {
+        return false;
+    }
+
+    arq << "P3\n";
+    arq << largura << " " << altura << "\n";
+    arq << "255\n";
+
+    for (int y = 0; y < altura; y++) {
+        for (int x = 0; x < largura; x++) {
+            Pixel& p = dadosPixel[y][x];
+            arq << p.r << " " << p.g << " " << p.b << "\n";
+        }
+    }
+
+    return true;
+}
