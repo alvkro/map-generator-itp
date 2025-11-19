@@ -37,4 +37,5 @@ class Imagem {
     int obterAltura();
     int obterLargura();
     bool lerPPM(string arquivo);
+    void criarImagem(int w, int h);
 };
