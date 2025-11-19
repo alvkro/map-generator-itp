@@ -33,7 +33,7 @@ Cores Paleta::obterCor(int indice) {return ConjuntoDeCores[indice];}
 
 int Paleta::ConvertToHex(string CodigoHex) {
         unsigned int valor;
-        stringstream ss; // Texto -> número 
+        stringstream ss; // Classe que permite que um texto seja colocado dentro dele e possa ser interpretado como número (trabalha somente co mstrings)
         ss << hex << CodigoHex;
         ss >> valor;
 

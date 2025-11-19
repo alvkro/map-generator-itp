@@ -10,7 +10,6 @@ class Paleta {
     public:
     Cores* ConjuntoDeCores;
     int tamanho, capacidade;
-    string arquivo;
 
     Paleta() {
         capacidade = 10;
