@@ -22,13 +22,7 @@ class Imagem {
     }
 
     Imagem(int w, int h) {
-        largura = w;
-        altura = h;
-
-        dadosPixel = new Pixel*[h]; 
-        for (int i = 0; i < h; i++) {
-            dadosPixel[i] = new Pixel[w];
-        }
+        criarImagem(w, h);
     }
 
     Imagem(string arquivo) {
