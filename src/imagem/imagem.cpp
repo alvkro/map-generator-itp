@@ -7,7 +7,7 @@ int Imagem::obterAltura() {return altura;}
 
 int Imagem::obterLargura() {return largura;}
 
-void Imagem::criarImagem(int w, int h) { // ???
+void Imagem::criarImagem(int w, int h) {
     largura = w;
     altura = h;
 
@@ -53,7 +53,7 @@ Pixel& Imagem::operator()(int x, int y) {
 }
 
 bool Imagem::salvarPPM(const string& arquivo) {
-    ofstream arq(arquivo);
+    ofstream arq(arquivo); // inserir dados no arquivo
     if (!arq.is_open()) {
         return false;
     }
