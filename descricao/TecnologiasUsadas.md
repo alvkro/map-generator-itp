@@ -28,3 +28,7 @@ Resumo:
 
 ## O que o código faz?
 Em resumo, o código é a combinação de todos os elementos acima, primeiro ele "joga" o valor de RGB desejado para o final, daí é aplicado a máscara para extrair os bits que estão no final, que é armazenado em uma variável (neste caso, a variável R (red)). O processo se repete até o final ao chegar em B.
+
+# Sobrecarga de operadores:
+Sobrecarga de operador significa ensinar o C++ a dar um novo significado a um operador, quando ele é usado com objetos de uma classe.
+O que ocorre no projeto, é que o uso dessa sobrecarga ensina o operador `()` a interpretar o conteúdo dentro dos parentêsis de um objeto da classe `imagem` como uma posição de coordenadas `(x, y)`, semelhante à uma função, que retorna `imagem(x,y)` naquela posição. Como retorna uma referência `Pixel&`, é possível alterar o acesso deste no pixel.
