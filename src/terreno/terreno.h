@@ -19,4 +19,7 @@ Terreno(int area) {
 void gerarTerreno(int area);
 int obterLargura();
 int obterProfundidade();
+void DeslocPontoMedio(int array_x[]);
+int NumberGenerator(int antiDeslocamento, int deslocamento);
+void DeslocPontoMedio(int arr[], int tamanho);
 };

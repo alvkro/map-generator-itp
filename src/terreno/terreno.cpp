@@ -1,5 +1,7 @@
 #include "terreno.h"
 #include <math.h>
+#include <random>
+using namespace std;
 
 void Terreno::gerarTerreno(int area) {
     int w = sqrt(area);
