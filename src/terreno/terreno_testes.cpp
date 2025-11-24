@@ -9,13 +9,12 @@ TEST_CASE("Testa a criação de um terreno de uma única célula") {
   CHECK(terreno.obterLargura() == 2);
   CHECK(terreno.obterProfundidade() == 2);
 }
-/*
+
 TEST_CASE("Testa a geração aleatória de altitudes") {
   Terreno terreno(2);
   CHECK(terreno.obterLargura() == 5);
   CHECK(terreno.obterProfundidade() == 5);
 }
-*/
 
 
 // Você precisará criar testes adicionais para cobrir os métodos privados da classe.
