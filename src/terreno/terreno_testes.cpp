@@ -5,9 +5,9 @@
 
 
 TEST_CASE("Testa a criação de um terreno de uma única célula") {
-  Terreno terreno(0); // 2^0 + 1 = 1
-  CHECK(terreno.obterLargura() == 1);
-  CHECK(terreno.obterProfundidade() == 1);
+  Terreno terreno(0); // 2^0 + 1 = 2
+  CHECK(terreno.obterLargura() == 2);
+  CHECK(terreno.obterProfundidade() == 2);
 }
 /*
 TEST_CASE("Testa a geração aleatória de altitudes") {
@@ -16,6 +16,7 @@ TEST_CASE("Testa a geração aleatória de altitudes") {
   CHECK(terreno.obterProfundidade() == 5);
 }
 */
+
 
 // Você precisará criar testes adicionais para cobrir os métodos privados da classe.
 // Por exemplo, você pode criar testes para os métodos das etapas Square e Diamond
