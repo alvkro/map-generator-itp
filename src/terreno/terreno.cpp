@@ -1,0 +1,19 @@
+#include "terreno.h"
+#include <math.h>
+
+void Terreno::gerarTerreno(int area) {
+    int w = sqrt(area);
+    int h = sqrt(area);
+
+    MedidasTerreno = new int*[h];
+    for (int i = 0; i < h; i++){
+        MedidasTerreno[i] = new int[w];
+    } 
+}
+
+int Terreno::obterLargura() {
+    return pow(2, areaTerreno) + 1;
+}
+int Terreno::obterProfundidade() {
+    return pow(2, areaTerreno) + 1;
+}
