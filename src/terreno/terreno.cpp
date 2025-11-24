@@ -12,8 +12,8 @@ void Terreno::gerarTerreno(int area) {
 }
 
 int Terreno::obterLargura() {
-    return pow(2, areaTerreno) + 1;
+    return tamanho;
 }
 int Terreno::obterProfundidade() {
-    return pow(2, areaTerreno) + 1;
+    return tamanho;
 }
