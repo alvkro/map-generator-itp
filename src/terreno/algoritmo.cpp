@@ -3,6 +3,8 @@
 #include <random>
 using namespace std;
 
+// Deslocamento do Ponto Médio:
+
 int Terreno::NumberGenerator(int antiDeslocamento, int deslocamento) {
     random_device rd;
     mt19937 gen(rd());
@@ -11,6 +13,15 @@ int Terreno::NumberGenerator(int antiDeslocamento, int deslocamento) {
 }
 
 // Versão inicial (tirar esse comentário quando terminar)
-void Terreno::DeslocPontoMedio(int array_x[10]) {
-    int M = (array_x[0] + array_x[1])/2;
+void Terreno::DeslocPontoMedio(int arr[], int tamanho) {
+        int inc = tamanho - 1;
+        for (int i = 0; i < tamanho; i++) { 
+            int M = (arr[i] + arr[inc])/2;
+            M += NumberGenerator(-8, 8);
+            arr[(i + inc) / 2] = M; // Midpoint Displacement
+            arr[M] = M + NumberGenerator(-8, 8);
+            inc--;
+    }
 }
+
+// end
