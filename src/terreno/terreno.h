@@ -1,17 +1,14 @@
 #pragma once
-
-// struct MedidasTerreno {
-//     int largura;
-//     int altura;
-// };
+#include <math.h>
 
 class Terreno {
 private:
-int areaTerreno;
+int tamanho;
 int** MedidasTerreno; // dá pra fazer diferente?
 
 public:
 Terreno(int area) {
+    tamanho = pow(2, area) + 1;
     gerarTerreno(area);
 }
 
