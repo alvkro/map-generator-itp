@@ -34,7 +34,7 @@ bool Imagem::lerPPM(string arquivo) {
 
     arq >> w >> h >> maxVal;
 
-    criarImagem(w, h); // cria a matriz
+    criarImagem(w, h);
 
     // Leitura simples dos pixels
     for (int y = 0; y < h; y++) {
