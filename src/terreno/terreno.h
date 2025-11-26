@@ -19,6 +19,9 @@ Terreno(int area) {
 void gerarTerreno(int area);
 int obterLargura();
 int obterProfundidade();
-int ruido(int antiDeslocamento, int deslocamento);
-bool deslocPontoMedio(int arr[], int tamanho);
+int randomizador(int antiDeslocamento, int deslocamento);
+void diamondSquare(int** terreno, int size, int ruido);
+int quantidadeLinhas(int area);
+int quantidadeColunas(int area);
+int returnAltitude(int x, int y);
 };
