@@ -26,9 +26,6 @@ void Terreno::diamondSquare(int** terreno, int size, int ruido) {
     // Calculo pra achar o meio: indexMid = (size - 1)/2;
 
     while (step > 1) {
-        int midX = 0;
-        int midY = 0;
-
         // Square-step:
         for (int x = 0; x < size - 1; x += step) {  
             for (int y = 0; y < size - 1; y += step) {
@@ -42,9 +39,9 @@ void Terreno::diamondSquare(int** terreno, int size, int ruido) {
             }
         }
         // Diamond-step
-        for (int x = 0; x < step - 1; x+= step) {
-            for (int y = 0; y < size - 1; y += step) {
-                int avg = (terreno[x][y] + terreno[x][y + step] + terreno[midX][midY])/3;
+        for (int x = step/2; x < size; x += step) {
+            for (int y = step/2; y < size; y += step) {
+                
             }
         }
         step /= 2;
