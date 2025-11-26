@@ -3,6 +3,10 @@
 #include <random>
 using namespace std;
 
+Terreno Terreno::operator()(int x, int y) { // Sobrecarga de operadores
+    return MedidasTerreno[y][x];
+}
+
 void Terreno::gerarTerreno(int area) {
     int w = sqrt(area);
     int h = sqrt(area);
@@ -28,11 +32,6 @@ int Terreno::quantidadeColunas(int area) {
     return sqrt(area);
 }
 
-int returnAltitude(int x, int y) {
-    int altitude = 0;
-    for (int i = 0; i < y; i++) {
-        for (int j = i + 1; j < x; j++) {
-            /*Definir uma mecanismo de busca...*/
-        }
-    }
+int Terreno::returnAltitude(int** terreno, int x, int y) {
+    return terreno[x][y]; // valor correspondente ao terreno
 }
