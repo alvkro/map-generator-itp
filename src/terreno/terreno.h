@@ -8,10 +8,10 @@ int** MedidasTerreno; // dá pra fazer diferente? (NAO)
 
 public:
 Terreno(int area) {
-    w = sqrt(area);
-    h = sqrt(area);
     tamanho = pow(2, area) + 1;
-    gerarTerreno(area);
+    w = tamanho;
+    h = tamanho;
+    gerarTerreno(tamanho);
 }
 
 ~Terreno() {
