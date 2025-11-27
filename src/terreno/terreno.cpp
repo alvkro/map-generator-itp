@@ -7,10 +7,7 @@ Terreno Terreno::operator()(int x, int y) { // Sobrecarga de operadores
     return MedidasTerreno[y][x];
 }
 
-void Terreno::gerarTerreno(int area) {
-    int w = sqrt(area);
-    int h = sqrt(area);
-
+void Terreno::gerarTerreno() {;
     MedidasTerreno = new int*[h];
     for (int i = 0; i < h; i++){
         MedidasTerreno[i] = new int[w];
