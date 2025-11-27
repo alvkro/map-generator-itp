@@ -11,7 +11,7 @@ Terreno(int area) {
     tamanho = pow(2, area) + 1;
     w = tamanho;
     h = tamanho;
-    gerarTerreno(tamanho);
+    gerarTerreno();
 }
 
 ~Terreno() {
@@ -22,13 +22,14 @@ Terreno(int area) {
 }
 
 Terreno operator()(int x, int y);
-void gerarTerreno(int area);
+void gerarTerreno();
 int obterLargura();
 int obterProfundidade();
-int randomizador(int antiDeslocamento, int deslocamento);
-void diamondSquare(int** terreno, int size, int ruido);
+double randomizador(int antiDeslocamento, int deslocamento);
+void diamondSquare(int size, int ruido);
 int quantidadeLinhas(int area);
 int quantidadeColunas(int area);
-int square_step(int size, int ruido);
+double square_step(int size, int ruido);
 int returnAltitude(int** terreno, int x, int y);
+double diamond_step(int size, int ruido);
 };
