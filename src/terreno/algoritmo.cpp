@@ -12,6 +12,23 @@ int Terreno::randomizador(int antiDeslocamento, int deslocamento) {
     return dist(gen);
 }
 
+int Terreno::square_step(int size, int ruido) {
+    // POR ENQUANTO ESTÁ SEM O RUÍDO, PARA FINS DE TESTE!!!!
+    int step = tamanho - 1;
+    for (int x = 0; x < size - 1; x += step) {  
+            for (int y = 0; y < size - 1; y += step) {
+                int avg = (MedidasTerreno[x][y] + MedidasTerreno[x][y + step] +  
+                    MedidasTerreno[x + step][y] + MedidasTerreno[x + step][y + step])/4;
+                
+                    int midX = x + step/2;
+                    int midY = y + step/2;
+
+                    MedidasTerreno[midX][midY] = avg;
+                    return MedidasTerreno[midX][midY];
+            }
+        }
+}
+
 // Versão inicial (tirar esse comentário quando terminar)
 // REALIZAR TRATAMENTO DE ERROS PARA MATRIZES DE DIMENSÕES PARES!!
 void Terreno::diamondSquare(int** terreno, int size, int ruido) {
@@ -21,22 +38,15 @@ void Terreno::diamondSquare(int** terreno, int size, int ruido) {
     terreno[tamanho - 1][0] = randomizador(-ruido, ruido);
     terreno[tamanho - 1][tamanho - 1] = randomizador(-ruido, ruido);
 
-    // Algoritmo:
     int step = tamanho - 1;
-    // Calculo pra achar o meio: indexMid = (size - 1)/2;
 
     while (step > 1) {
-        // Square-step:
-        for (int x = 0; x < size - 1; x += step) {  
-            for (int y = 0; y < size - 1; y += step) {
-                int avg = (terreno[x][y] + terreno[x][y + step] +  
-                    terreno[x + step][y] + terreno[x + step][y + step])/4;
-                
-                    int midX = x + step/2;
-                    int midY = y + step/2;
+    square_step(size, ruido);
 
-                    terreno[midX][midY] = avg;
-            }
+     // Diamond-step
+    for (int x = step/2; x < size; x += step) {
+        for (int y = step/2; y < size; y += step) {
+            
         }
         // Diamond-step
         for (int x = step/2; x < size; x += step) {
