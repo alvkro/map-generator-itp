@@ -41,7 +41,14 @@ void Terreno::diamondSquare(int** terreno, int size, int ruido) {
         // Diamond-step
         for (int x = step/2; x < size; x += step) {
             for (int y = step/2; y < size; y += step) {
-                
+                double corner1 = terreno[x - (step/2)][y - (step/2)];
+                double corner2 = terreno[x - (step/2)][y + (step/2)];
+                double corner3 = terreno[x + (step/2)][y - (step/2)];
+                double corner4 = terreno[x + (step/2)][y + (step/2)];
+
+                double mid = (corner1 + corner2 + corner3 + corner4)/4;
+                double randomvalue = randomizador(-ruido, ruido);
+                terreno[x][y] = mid + randomvalue;    
             }
         }
         step /= 2;
