@@ -16,9 +16,6 @@ TEST_CASE("Testa a geração aleatória de altitudes") {
   CHECK(terreno.obterProfundidade() == 5);
 }
 
-TEST_CASE("Testa o retorno da altitude de uma célula de um terreno") {
-  
-}
 
 TEST_CASE("Testa a confiabilidade do gerador de números") {
   Terreno terreno(3);
@@ -28,14 +25,19 @@ TEST_CASE("Testa a confiabilidade do gerador de números") {
 }
 
 TEST_CASE("Testa a funcionalidade da etapa quadrada do Diamond-Square") {
-  Terreno terreno(2);
+    Terreno terreno(2);  // tamanho 5
 
-  // Sem o ruído
-  terreno(0, 0) = 2;
-  terreno(0, 3) = 7;
-  terreno(3, 0) = 3;
-  terreno(3, 3) = 5;
-  CHECK(terreno.square_step(2, 0) == 2);
+    terreno(0, 0) = 2;
+    terreno(0, 4) = 7;
+    terreno(4, 0) = 3;
+    terreno(4, 4) = 5;
+
+    // step correto = tamanho - 1 = 4
+    CHECK(terreno.square_step(4,0) == 4);
+}
+
+TEST_CASE("Testa o retorno da altitude de uma célula de um terreno") {
+  
 }
 
 // Você precisará criar testes adicionais para cobrir os métodos privados da classe.
