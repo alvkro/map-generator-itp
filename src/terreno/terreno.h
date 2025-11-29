@@ -29,5 +29,5 @@ int quantidadeLinhas(int area);
 int quantidadeColunas(int area);
 int square_step(int step, int ruido);
 int returnAltitude(int x, int y);
-int diamond_step(int size, int ruido);
+void diamond_step(int step, int ruido);
 };
