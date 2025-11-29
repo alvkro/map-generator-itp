@@ -31,18 +31,36 @@ int Terreno::square_step(int step, int ruido) { // size vai receber tamanho...
     return MedidasTerreno[tamanho / 2][tamanho / 2];
 }
 
-int Terreno::diamond_step(int size, int ruido) {
-    int step = size / 2;
-    for (int x = step / 2; x < size; x += step) {
-        for (int y = step / 2; y < size; y += step) {
-            int corner1 = MedidasTerreno[x - (step/2)][y - (step/2)];
-            int corner2 = MedidasTerreno[x - (step/2)][y + (step/2)];
-            int corner3 = MedidasTerreno[x + (step/2)][y - (step/2)];
-            int corner4 = MedidasTerreno[x + (step/2)][y + (step/2)];
+void Terreno::diamond_step(int step, int ruido){
+    for (int x = 0; x < tamanho; x += (step/2)){
+        for (int y = ((x / (step/2)) % 2 == 0 ) ? (step/2) : 0; y < tamanho; y += step){
+            double sum = 0.0;
+            int count = 0;
 
-            int mid = (corner1 + corner2 + corner3 + corner4)/4;
-            int randomvalue = randomizador(-ruido, ruido);
-            MedidasTerreno[x][y] = mid + randomvalue;  
+            if (x - (step/2) >= 0){   // Pontos vizinhos para o Square Step
+                sum += MedidasTerreno[x - (step/2)][y];  // Topo
+                count++;
+            }
+            if (x + (step/2) < tamanho){
+                sum += MedidasTerreno[x + (step/2)][y];  // Base
+                count++;
+            }
+            if (y - (step/2) >= 0){
+                sum += MedidasTerreno[x][y - (step/2)];  // Esquerda
+                count++;
+            }
+            if (y + (step/2) < tamanho){
+                sum += MedidasTerreno[x][y + (step/2)];  // Direita
+                count++;
+            }
+            if (count > 0){
+                double mid = sum / count;
+                double rv = randomizador(-ruido, ruido);
+
+                if (MedidasTerreno[x][y] == -1.0){
+                    MedidasTerreno[x][y] = mid + rv;
+                }
+            }
         }
     }
 }
