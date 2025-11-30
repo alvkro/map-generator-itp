@@ -56,6 +56,15 @@ TEST_CASE("Testa a funcionalidade da etapa diamante do Diamond-Square") {
 }
 
 TEST_CASE("Agora, o teste do funcionamento do Diamond-Square por completo") {
+  Terreno terreno(2);
+
+  terreno(0, 0) = 3;
+  terreno(4, 0) = 6;
+  terreno(0, 4) = 7;
+  terreno(4, 4) = 10;
+
+  int meio = terreno.square_step(2, 0);
+
   
 }
 
