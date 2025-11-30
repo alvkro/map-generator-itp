@@ -25,7 +25,7 @@ TEST_CASE("Testa a confiabilidade do gerador de números") {
 }
 
 TEST_CASE("Testa a funcionalidade da etapa quadrada do Diamond-Square") {
-    Terreno terreno(2);  // tamanho 5
+    Terreno terreno(2);  // 2^2 + 1 = 5 X 5
 
     terreno(0, 0) = 2;
     terreno(0, 4) = 7;
@@ -36,7 +36,35 @@ TEST_CASE("Testa a funcionalidade da etapa quadrada do Diamond-Square") {
     CHECK(terreno.square_step(4,0) == 4);
 }
 
-TEST_CASE("Testa o retorno da altitude de uma célula de um terreno") {
+TEST_CASE("Testa a funcionalidade da etapa diamante do Diamond-Square") {
+    Terreno terreno(2); 
+
+    terreno(0, 0) = 10; terreno(0, 4) = 10;
+    terreno(4, 0) = 10; terreno(4, 4) = 10;
+    terreno(2, 2) = 10; 
+
+    terreno(0, 2) = -1;
+    terreno(2, 0) = -1;
+    terreno(2, 4) = -1; 
+    terreno(4, 2) = -1; 
+
+    terreno.diamond_step(4, 0);
+    
+    CHECK(terreno(0, 2) == 10);
+    CHECK(terreno(2, 0) == 10);
+    CHECK(terreno(2, 4) == 10);
+}
+
+TEST_CASE("Agora, o teste do funcionamento do Diamond-Square por completo") {
+  Terreno terreno(2);
+
+  terreno(0, 0) = 3;
+  terreno(4, 0) = 6;
+  terreno(0, 4) = 7;
+  terreno(4, 4) = 10;
+
+  int meio = terreno.square_step(2, 0);
+
   
 }
 
