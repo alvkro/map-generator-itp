@@ -24,6 +24,8 @@ TEST_CASE("Testa a confiabilidade do gerador de números") {
   CHECK(terreno.randomizador(-4, 4) >= -4);
 }
 
+// AVISO: todos os testes abaixo são sem o ruído por motivos óbvios :P
+
 TEST_CASE("Testa a funcionalidade da etapa quadrada do Diamond-Square") {
     Terreno terreno(2);  // 2^2 + 1 = 5 X 5
 
