@@ -43,7 +43,7 @@ As principais funções dessa etapa são:
 ---
 
 ## Etapa 3: Terreno
-Responsável pela "mágica" do projeto, esta etapa gerencia a lógica de geração procedural, criando uma matriz de altitudes que representa a topografia do mapa. A classe utiliza o algoritmo **Diamond-Square** para gerar relevos naturais de forma fractal.
+Esta etapa gerencia a lógica de geração procedural, criando uma matriz de altitudes que representa a topografia do mapa. A classe utiliza o algoritmo **Diamond-Square** para gerar relevos naturais.
 
 ### Construtor:
 - Recebe um valor de "área" (expoente) para calcular o tamanho real da matriz seguindo a regra do algoritmo: `tamanho = 2^n + 1`.
@@ -68,7 +68,7 @@ Para compilar o projeto, certifique-se de ter um compilador C++ instalado (como 
 # Compilação
 g++ main.cpp terreno.cpp -o gerador_mapas
 
-# Execução (Linux/Mac)
+# Execução (Linux)
 ./gerador_mapas
 
 # Execução (Windows)
