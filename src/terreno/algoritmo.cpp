@@ -37,6 +37,8 @@ void Terreno::diamond_step(int step, int ruido){
             double sum = 0.0;
             int count = 0;
 
+            // RV = random value
+
             if (x - (step/2) >= 0){   // Pontos vizinhos para o Square Step
                 sum += MedidasTerreno[x - (step/2)][y];  // Topo
                 count++;

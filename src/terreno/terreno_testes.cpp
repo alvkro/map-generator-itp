@@ -58,7 +58,6 @@ TEST_CASE("Testa a funcionalidade da etapa diamante do Diamond-Square") {
 }
 
 TEST_CASE("Validação precisa da etapa Diamond (Bordas e Centro)") {
-    // 1. Criação do Terreno 5x5 (Area 2)
     Terreno terreno(2);
     
     // Vizinho Esquerda
@@ -68,8 +67,6 @@ TEST_CASE("Validação precisa da etapa Diamond (Bordas e Centro)") {
     // Vizinho Baixo
     terreno(2, 2) = 30; 
     
-    // Os outros cantos não importam para o ponto (0,2), 
-    // mas vamos zerar para limpar lixo de memória
     terreno(4, 0) = 0;
     terreno(4, 4) = 0;
 
@@ -78,7 +75,6 @@ TEST_CASE("Validação precisa da etapa Diamond (Bordas e Centro)") {
     terreno(2, 4) = -1;
     terreno(4, 2) = -1;
 
-    // 3. Execução
     terreno.diamond_step(4, 0);
 
     // 4. Verificações

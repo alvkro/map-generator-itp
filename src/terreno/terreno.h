@@ -1,5 +1,6 @@
 #pragma once
 #include <math.h>
+#include "imagem/imagem.h"
 
 class Terreno {
 private:
@@ -19,6 +20,7 @@ Terreno(int area) {
     delete[] MedidasTerreno;
 }
 
+Imagem paisagem(Paleta color);
 int& operator()(int x, int y);
 void gerarTerreno();
 int obterLargura();

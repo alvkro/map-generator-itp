@@ -30,7 +30,7 @@ class Imagem {
     }
 
     ~Imagem() { 
-        for (int i = 0; i < altura; i++) {
+        for (int i = 0; i < largura; i++) {
             delete[] dadosPixel[i];
         }
         delete[] dadosPixel;
