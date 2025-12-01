@@ -11,9 +11,9 @@ void Imagem::criarImagem(int w, int h) {
     largura = w;
     altura = h;
 
-    dadosPixel = new Pixel*[h];
-    for (int i = 0; i < h; i++){
-        dadosPixel[i] = new Pixel[w]; 
+    dadosPixel = new Pixel*[w];
+    for (int i = 0; i < w; i++){
+        dadosPixel[i] = new Pixel[h]; 
     } 
 }
 
@@ -49,7 +49,7 @@ bool Imagem::lerPPM(string arquivo) {
 }
 
 Pixel& Imagem::operator()(int x, int y) {
-    return dadosPixel[y][x];
+    return dadosPixel[x][y];
 }
 
 bool Imagem::salvarPPM(const string& arquivo) {
