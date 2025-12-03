@@ -80,6 +80,7 @@ void Terreno::diamondSquare(int size, int ruido) {
     while (step > 1) {
     square_step(size, ruido);
     diamond_step(size, ruido);
+    ruido /= 2;
     step /= 2;
     }
 }
