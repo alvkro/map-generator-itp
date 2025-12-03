@@ -1,6 +1,7 @@
+#pragma once
 #include <string>
 using namespace std;
-#pragma once
+
 
 struct Cores {
     int r, g, b; //menos eficiente
