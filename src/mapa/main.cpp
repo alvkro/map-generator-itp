@@ -18,4 +18,18 @@ int main() {
 
     cout << "Digite o nome do arquivo que deseja usar: ";
     cin >> nome_arquivo;
+
+    Terreno terreno(size_terreno);
+    terreno.gerarTerreno();
+    
+    Paleta paleta(arquivo_cores);
+
+    Imagem img = terreno.paisagem(paleta);
+
+    if(img.salvarPPM(nome_arquivo))
+        cout << "Imagem salva com sucesso em " << nome_arquivo << endl;
+    else
+        cout << "Erro ao salvar imagem." << endl;
+
+    return 0;
 }
