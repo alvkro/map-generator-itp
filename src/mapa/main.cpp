@@ -26,7 +26,7 @@
      Terreno land(size_terreno);
      land.diamondSquare(land.obterLargura() - 1, 10);
  
-     Imagem img = land.paisagem(colors);
+     Imagem img = land.paisagem(colors); // problema aqui
      img.salvarPPM(nome_arquivo);
  }
 
