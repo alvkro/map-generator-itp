@@ -1,3 +1,4 @@
+#pragma once
 #include "../paleta/paleta.h"
 // Depois estudar a parte de using...
 
