@@ -20,7 +20,7 @@ Terreno(int area) {
     delete[] MedidasTerreno;
 }
 
-Imagem paisagem(Paleta color);
+Imagem paisagem(Paleta& cores);
 int& operator()(int x, int y);
 void gerarTerreno();
 int obterLargura();

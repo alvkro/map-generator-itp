@@ -58,10 +58,7 @@ void Terreno::diamond_step(int step, int ruido){
             if (count > 0){
                 double mid = sum / count;
                 double rv = randomizador(-ruido, ruido);
-
-                if (MedidasTerreno[x][y] == -1.0){
-                    MedidasTerreno[x][y] = mid + rv;
-                }
+                MedidasTerreno[x][y] = mid + rv;
             }
         }
     }
@@ -78,8 +75,8 @@ void Terreno::diamondSquare(int size, int ruido) {
     int step = tamanho - 1;
 
     while (step > 1) {
-    square_step(size, ruido);
-    diamond_step(size, ruido);
+    square_step(step, ruido);
+    diamond_step(step, ruido);
     ruido /= 2;
     step /= 2;
     }
