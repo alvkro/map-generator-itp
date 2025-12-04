@@ -6,6 +6,8 @@ O projeto foi criado para fins avaliativos da disciplina **Introdução a Técni
 
 A proposta inicial do projeto é desenvolver um gerador de mapas procedural, utilizando a linguagem **C++** e o algoritmo **Diamond-Square**, resultando na representação visual de um terreno topográfico.
 
+<img width="513" height="513" alt="primeiroteste" src="https://github.com/user-attachments/assets/37820862-2829-4adf-9d4e-2867d8392b9b" />
+
 ---
 
 ## Etapa 1: Paleta
@@ -58,6 +60,21 @@ As principais funções que compõem o algoritmo são:
 - **`randomizador`:** Utiliza o motor `std::mt19937` (Mersenne Twister) para gerar números pseudo-aleatórios com distribuição uniforme, garantindo maior qualidade estatística que o `rand()` comum;
 - **Sobrecarga de Operador `()`:** Facilita o acesso e a escrita de dados na matriz de terreno através da sintaxe `terreno(x, y)`.
 
+## Etapa 4: Mapa
+- A etapa final do projeto, tem como objetivo juntar todas as etapas anteriores (`paleta`, `terreno` e `imagem`) para formar o mapa.
+- Para tanto, é necessário uma última função que receba a paleta e faça um sombreamento.
+
+### Função:
+- A função `paisagem` tem como objetivo, a partir do mapa de altitudes gerado pelo algoritmo "Diamond-Square", colorir utilizando um gradiente em uma ordem específica (`cores.hex`);
+- É realizado um cálculo (normatização) da matriz, ocorre da seguinte forma:
+1. É armazenado a maior/menor altitude do terreno;
+2. Ocorre um cálculo em porcentagem em relação à altura do mapa (50% da altitude, 75%...);
+3. Acontece outro cálculo, no qual pega o índice relacionado ao tamanho da paleta, daí pinta aquele píxel;
+- Para o sombreamento, ocorre uma verificação se a célula n - 1 é menor que a célula n, daí escurece 40% de cada atributo RGB;
+- Finalizando no `main.cpp`, há a criação do terreno + a aplicação do algoritmo `Diamond-Square`, criação da paleta de cores, a
+execução do método `paisagem` e, por fim, o salvamento do arquivo `.ppm`.
+- Segue abaixo alguns exemplares da execução do programa:
+<img width="513" height="513" alt="terreno512" src="https://github.com/user-attachments/assets/4a94fc22-e954-4b62-8bb3-70b39bd40eff" />
 ---
 
 ## Como Compilar e Executar
@@ -66,10 +83,10 @@ Para compilar o projeto, certifique-se de ter um compilador C++ instalado (como 
 
 ```bash
 # Compilação
-g++ main.cpp terreno.cpp -o gerador_mapas
+g++ -I. imagem/imagem.cpp paleta/paleta.cpp terreno/algoritmo.cpp terreno/terreno.cpp mapa/main.cpp -o gerador
 
 # Execução (Linux)
-./gerador_mapas
+./gerador
 
 # Execução (Windows)
-gerador_mapas.exe
+gerador.exe
